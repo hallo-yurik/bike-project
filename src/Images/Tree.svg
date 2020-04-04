@@ -1,0 +1,9 @@
+<svg width="71" height="92" viewBox="0 0 71 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-2-inside-1" fill="white">
+<rect x="27.2344" y="58.6523" width="15.5427" height="32.7361" rx="2.95127"/>
+</mask>
+<rect x="27.2344" y="58.6523" width="15.5427" height="32.7361" rx="2.95127" fill="white" stroke="#202020" stroke-width="8.5" mask="url(#path-2-inside-1)"/>
+<path d="M34.7219 40.9645C35.0524 40.5231 35.7142 40.5231 36.0447 40.9645L60.4333 73.5324C60.8413 74.0771 60.4525 74.8539 59.7719 74.8539H10.9947C10.3141 74.8539 9.92536 74.0771 10.3333 73.5324L34.7219 40.9645Z" fill="white" stroke="#202020" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.7219 23.1471C35.0524 22.7058 35.7142 22.7058 36.0447 23.1471L57.0682 51.2213C57.4761 51.7661 57.0874 52.5429 56.4068 52.5429H14.3597C13.6791 52.5429 13.2904 51.7661 13.6984 51.2213L34.7219 23.1471Z" fill="white" stroke="#202020" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M34.722 4.74132C35.0525 4.29999 35.7142 4.29999 36.0447 4.74132L53.7032 28.3219C54.1111 28.8667 53.7224 29.6435 53.0418 29.6435H17.7249C17.0443 29.6435 16.6556 28.8667 17.0635 28.3219L34.722 4.74132Z" fill="white" stroke="#202020" stroke-width="4.25" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

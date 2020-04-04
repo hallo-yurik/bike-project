@@ -1,0 +1,13 @@
+<svg height="57" viewBox="0 0 162 212" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <mask id="path-2-inside-1" fill="white">
+        <rect x="62.1759" y="135.775" width="35.9037" height="76.1407" rx="7.60924"/>
+    </mask>
+    <rect x="62.1759" y="135.775" width="35.9037" height="76.1407" rx="7.60924" fill="white"
+          stroke-width="16" mask="url(#path-2-inside-1)"/>
+    <path d="M78.104 94.932C79.5472 92.9916 82.453 92.9916 83.8961 94.932L138.714 168.638C140.485 171.019 138.786 174.401 135.818 174.401H26.182C23.2145 174.401 21.515 171.019 23.286 168.638L78.104 94.932Z"
+          fill="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78.1039 53.4901C79.5471 51.5497 82.4529 51.5497 83.896 53.4901L130.941 116.744C132.712 119.125 131.012 122.507 128.045 122.507H33.9553C30.9878 122.507 29.2883 119.125 31.0593 116.744L78.1039 53.4901Z"
+          fill="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M78.104 10.6806C79.5472 8.74012 82.453 8.74013 83.8962 10.6805L123.167 63.4829C124.938 65.8641 123.239 69.2461 120.271 69.2461H41.7289C38.7614 69.2461 37.0618 65.8641 38.8328 63.4829L78.104 10.6806Z"
+          fill="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

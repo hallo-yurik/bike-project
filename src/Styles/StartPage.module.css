@@ -1,0 +1,112 @@
+.container{
+    width: 100%;
+
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main__container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.topic{
+    /*font-family: Raleway;*/
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 42px;
+    letter-spacing: 0.05em;
+
+    color: #202020;
+
+    text-align: center;
+
+    /*margin-top: 102px;*/
+}
+
+.text{
+    /*font-family: Raleway;*/
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+
+    color: #202020;
+
+    max-width: 528px;
+
+    margin: 57px 0;
+}
+
+.button__text{
+    text-decoration: none;
+    text-transform: uppercase;
+
+    /*font-family: Raleway;*/
+
+}
+
+.button{
+    width: 160px;
+    height: 56px;
+
+    background: #F6F6F6;
+    border: 3px solid #202020;
+    box-sizing: border-box;
+    border-radius: 5px;
+
+    text-align: center;
+    vertical-align: middle;
+
+    font-style: normal;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 50px;
+    letter-spacing: 0.05em;
+
+    color: #202020;
+
+    /*margin-bottom: 130px;*/
+}
+
+.bike{
+    width: 100%;
+}
+
+.bike__container{
+    width: 105px;
+    height: 60px;
+}
+
+.lower__line{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    border-bottom: 3px solid #202020;
+}
+
+.tree{
+    width: 100%;
+}
+
+.tree__container{
+    width: 72px;
+    height: 92px;
+}
+
+.higher__line{
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    border-bottom: 3px solid #202020;
+}
