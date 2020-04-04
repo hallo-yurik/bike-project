@@ -27,7 +27,7 @@ let initialState = {
     },
     bicycleSVGOptions: {
         width: 600,
-        height: 400,
+        height: 395,
         viewBox: "-1 -61 630 426"
     },
     bicycleParts: {
