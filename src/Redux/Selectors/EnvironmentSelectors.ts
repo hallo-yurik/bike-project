@@ -19,3 +19,11 @@ export const getCurrentLocation = (state: AppStateType) => {
 export const getLocationParts = (state: AppStateType) => {
     return state.Environment.locationParts
 };
+
+export const getTreeArray = (state: AppStateType) => {
+    return state.Environment.treeArray
+};
+
+export const getCloudArray = (state: AppStateType) => {
+    return state.Environment.cloudArray
+};

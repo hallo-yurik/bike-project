@@ -24,8 +24,7 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
     }
 };
 
-type MapDispatchToPropsType = {
-}
+type MapDispatchToPropsType = {}
 
 type OwnPropsType = {}
 

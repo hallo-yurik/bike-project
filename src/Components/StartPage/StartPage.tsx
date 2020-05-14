@@ -2,9 +2,11 @@ import React, {FC} from 'react';
 import {StartPagePropsType} from './StartPageContainer';
 import {NavLink} from "react-router-dom";
 import StartPageStyles from '../../Styles/StartPage.module.css';
-import Bike from "./../../Images/Bike.svg";
-import Tree from "./../../Images/Tree.svg";
-import useWindowSize from "./useWindowWidth";
+import {ReactComponent as Tree} from "./../../Images/Tree.svg";
+import {ReactComponent as Bike} from "./../../Images/Bike.svg";
+// import Bike from "./../../Images/Bike.svg";
+// import Tree from "./../../Images/Tree.svg";
+import useWindowSize from "../../Hooks/useWindowWidth";
 
 const StartPage: FC<StartPagePropsType> = (props) => {
 
@@ -13,14 +15,16 @@ const StartPage: FC<StartPagePropsType> = (props) => {
     let treeArray = [];
     for (let i = 0; i < Math.floor(windowWidth / 252); i++) {
         treeArray.push(<div key={i} className={StartPageStyles.tree__container}>
-            <img className={StartPageStyles.tree} src={Tree} alt="bike"/>
+            <Tree className={StartPageStyles.tree}/>
+            {/*<img className={StartPageStyles.tree} src={Tree} alt="tree"/>*/}
         </div>)
     }
 
     let bikeArray = [];
     for (let i = 0; i < Math.floor(windowWidth) / 297; i++) {
         bikeArray.push(<div key={i} className={StartPageStyles.bike__container}>
-            <img className={StartPageStyles.bike} src={Bike} alt="bike"/>
+            <Bike className={StartPageStyles.bike}/>
+            {/*<img className={StartPageStyles.bike} src={Bike} alt="bike"/>*/}
         </div>)
     }
 

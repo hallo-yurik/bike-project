@@ -22,4 +22,4 @@ export const getParts = (state: AppStateType) => {
 
 export const getCurrentOption = (state: AppStateType) => {
     return state.Options.currentOption;
-}
+};

@@ -6,6 +6,10 @@
     height: 75%;
 }
 
+.bike__container svg{
+    z-index: 10;
+}
+
 .line {
     border: 3px solid #202020;
     margin: 0;
@@ -13,6 +17,8 @@
 
 .except__road {
     height: 73%;
+    text-align: center;
+    position: relative;
 }
 
 .road {
@@ -29,6 +35,109 @@
     width: 60px;
 }
 
-.bike {
-    text-align: center;
+.except__road svg {
+    position: relative;
+    top: 50px;
+}
+
+.forest {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*bottom: 200px;*/
+    display: flex;
+    justify-content: space-around;
+}
+
+.sky {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /*bottom: 200px;*/
+    display: flex;
+    justify-content: space-around;
+}
+
+.tree {
+    width: 100%;
+    height: 100%;
+}
+
+.cloud {
+    width: 100%;
+    height: 100%;
+}
+
+.tree__container__big {
+    width: 162px;
+    height: 212px;
+    position: relative;
+
+    z-index: 3;
+
+    animation: going;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.tree__container__medium {
+    width: 122px;
+    height: 159px;
+    position: relative;
+
+    z-index: 2;
+
+    animation: going;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.tree__container__small {
+    width: 81px;
+    height: 106px;
+    position: relative;
+
+    z-index: 1;
+
+    animation: going;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes going {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0
+    }
+}
+
+.cloud__container__small {
+    width: 81px;
+    height: 106px;
+    position: relative;
+
+    animation: going;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.cloud__container__medium {
+    width: 122px;
+    height: 159px;
+    position: relative;
+
+    animation: going;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.transparent {
+    opacity: 0;
 }

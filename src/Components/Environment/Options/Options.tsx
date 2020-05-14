@@ -12,7 +12,9 @@ const Options: FC<OptionsPropsType> = (props) => {
                 chooseExactPart(part.id, part.point, props.choosePoint, props.changePart)
             }>
                 {part.isChosen
-                    ? React.cloneElement(part.src, {className: `${OptionsStyles.image__style} ${OptionsStyles.activated}`} )
+                    ? React.cloneElement(part.src, {className: `${OptionsStyles.image__style} ${OptionsStyles.activated}`})
+                    // ? <Src className={`${OptionsStyles.image__style} ${OptionsStyles.activated}`}/>
+                    // : <Src className={OptionsStyles.image__style}/>
                     : React.cloneElement(part.src, {className: OptionsStyles.image__style})
                 }
             </div>
