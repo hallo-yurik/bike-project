@@ -1,13 +1,11 @@
-import React, {FC} from "react";
+import React, {FC, useEffect} from "react";
 import Environment from "./Environment";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {AppStateType} from "../../Redux/Store";
 import {
-    emptyClouds,
-    emptyTrees,
-    generateClouds,
-    generateTrees
+    emptyAllThunk,
+    generateAllThunk
 } from "../../Redux/Reducers/EnvironmentReducer/environment-reducer";
 import {
     getCloudArray,
@@ -18,6 +16,7 @@ import {
 import {CurrentLocationType, LocationParts} from "../../Types/EnvironmentTypes";
 import {getParts} from "../../Redux/Selectors/OptionsSelectors";
 import {PartsType} from "../../Types/OptionsTypes";
+import useWindowSize from "../../Hooks/useWindowWidth";
 
 type MapStateToPropsType = {
     locationParts: LocationParts;
@@ -38,10 +37,8 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 };
 
 type MapDispatchToPropsType = {
-    generateTrees: (amount: number) => void,
-    emptyTrees: () => void,
-    generateClouds: (amount: number) => void,
-    emptyClouds: () => void
+    generateAllThunk: (treesAmount: number, cloudsAmount: number) => void,
+    emptyAllThunk: () => void
 }
 
 // let mapDispatchToProps = (state: AppStateType) => {};
@@ -52,6 +49,18 @@ export type EnvironmentPropsType = MapStateToPropsType & MapDispatchToPropsType 
 
 const EnvironmentContainer: FC<EnvironmentPropsType> = (props) => {
 
+    const windowWidth = useWindowSize();
+
+    useEffect(() => {
+        const treesAmount = Math.floor(windowWidth / 200);
+        const cloudsAmount = Math.floor(windowWidth / 200);
+        props.generateAllThunk(treesAmount, cloudsAmount);
+
+        return () => {
+            props.emptyAllThunk()
+        }
+    }, [windowWidth]);
+
     return (
         <Environment {...props}/>
     )
@@ -60,10 +69,8 @@ const EnvironmentContainer: FC<EnvironmentPropsType> = (props) => {
 export default compose(
     connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>
     (mapStateToProps, {
-        generateTrees,
-        emptyTrees,
-        generateClouds,
-        emptyClouds
+        generateAllThunk,
+        emptyAllThunk
     })
 )(EnvironmentContainer)
 

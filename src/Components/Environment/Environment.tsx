@@ -1,25 +1,10 @@
-import React, {FC, useEffect} from "react";
+import React, {FC} from "react";
 import OptionsContainer from "./Options/OptionsContainer";
 import EnvironmentStyles from "./../../Styles/Environment.module.css";
 import BikeContainer from "./Bike/BikeContainer";
 import {EnvironmentPropsType} from "./EnvironmentContainer";
-import useWindowSize from "../../Hooks/useWindowWidth";
 
 const Environment: FC<EnvironmentPropsType> = (props) => {
-
-    const windowWidth = useWindowSize();
-
-    useEffect(() => {
-        const treesAmount = Math.floor(windowWidth / 200);
-        const cloudsAmount = Math.floor(windowWidth / 200);
-        props.generateTrees(treesAmount);
-        props.generateClouds(cloudsAmount);
-
-        return () => {
-            props.emptyTrees();
-            props.emptyClouds();
-        }
-    }, [windowWidth]);
 
     const Tree = props.locationParts.trees;
     const Cloud = props.locationParts.clouds;

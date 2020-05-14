@@ -2,14 +2,13 @@ import React, {FC} from "react";
 import {OptionsPropsType} from "./OptionsContainer";
 import OptionsStyles from "./../../../Styles/Options.module.css";
 import {NavLink} from "react-router-dom";
-import {chooseExactPart, hideParts, showParts} from "./MultiDispatches";
 
 const Options: FC<OptionsPropsType> = (props) => {
 
     let partList = props.options.map((part) => {
         return (
             <div className={OptionsStyles.test__delete__later} key={part.id} onClick={() =>
-                chooseExactPart(part.id, part.point, props.choosePoint, props.changePart)
+                props.chooseExactPartThunk(part.id, part.point)
             }>
                 {part.isChosen
                     ? React.cloneElement(part.src, {className: `${OptionsStyles.image__style} ${OptionsStyles.activated}`})
@@ -24,11 +23,11 @@ const Options: FC<OptionsPropsType> = (props) => {
     let menuList = props.menu.map(point => {
         if (point.isActive) {
             return <div onClick={() =>
-                hideParts(props.deactivatePoint, props.clearCurrentOption)
+                props.hidePartsThunk()
             } className={`${OptionsStyles.menu__text} ${OptionsStyles.activated}`} key={point.id}>{point.point}</div>
         } else {
             return <div onClick={() => {
-                showParts(point.id, point.point, props.activatePoint, props.setOptions, props.setCurrentOption)
+                props.showPartsThunk(point.id, point.point)
             }} className={OptionsStyles.menu__text} key={point.id}>{point.point}</div>
         }
     });

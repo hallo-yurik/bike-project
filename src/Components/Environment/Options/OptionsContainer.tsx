@@ -13,14 +13,11 @@ import {compose} from "redux";
 import {connect} from "react-redux";
 import Options from "./Options";
 import {
-    activatePoint,
-    choosePoint,
-    clearCurrentOption,
-    deactivatePoint,
-    setCurrentOption,
-    setOptions
+    chooseExactPartThunk,
+    hidePartsThunk,
+    showPartsThunk
 } from "../../../Redux/Reducers/OptionsReducer/options-reducer";
-import {changePart} from "../../../Redux/Reducers/EnvironmentReducer/environment-reducer";
+
 
 type MapStateToPropsType = {
     constructor: string,
@@ -43,13 +40,9 @@ let mapStateToProps = (state: AppStateType): MapStateToPropsType => {
 };
 
 type MapDispatchToPropsType = {
-    activatePoint: (id: number) => void,
-    deactivatePoint: () => void,
-    setOptions: (point: string) => void,
-    setCurrentOption: (point: string) => void,
-    clearCurrentOption: () => void,
-    choosePoint: (id: number) => void,
-    changePart: (point: string, id: number) => void
+    showPartsThunk: (id: number, point: string) => void,
+    hidePartsThunk: () => void,
+    chooseExactPartThunk: (id: number, point: string) => void
 }
 
 type OwnPropsType = {}
@@ -65,12 +58,8 @@ const OptionsContainer: FC<OptionsPropsType> = (props) => {
 export default compose(
     connect<MapStateToPropsType, MapDispatchToPropsType, OwnPropsType, AppStateType>
     (mapStateToProps, {
-        activatePoint,
-        deactivatePoint,
-        setOptions,
-        setCurrentOption,
-        clearCurrentOption,
-        choosePoint,
-        changePart
+        showPartsThunk,
+        hidePartsThunk,
+        chooseExactPartThunk
     })
 )(OptionsContainer)

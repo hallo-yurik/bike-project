@@ -7,15 +7,15 @@ import {
 import {changeBicyclePartTransformer} from "../../Helpers/EnvironmentHelpers";
 import {ReactComponent as Tree} from "../../../Images/TreeEnvironment.svg";
 import {ReactComponent as Cloud} from "../../../Images/CloudEnvironment.svg";
-
-
 import EnvironmentStyles from "../../../Styles/Environment.module.css";
+import {AppStateType} from "../../Store";
+import {ThunkAction} from "redux-thunk";
 
 const CHANGE_PART = "CHANGE_PART";
 const GENERATE_TREES = "GENERATE_TREES";
 const EMPTY_TREES = "EMPTY_TREES";
 const GENERATE_CLOUDS = "GENERATE_CLOUDS";
-const EMPTY_CLOUDS = "EMPTY_CLOUDS"
+const EMPTY_CLOUDS = "EMPTY_CLOUDS";
 
 let initialState = {
     currentLocation: {
@@ -96,7 +96,6 @@ const environmentReducer = (state = initialState, action: ActionsTypes): Environ
                 ...state,
                 cloudArray: [...localCloudArray]
             };
-            // return state
 
         case EMPTY_CLOUDS:
             return {
@@ -109,26 +108,41 @@ const environmentReducer = (state = initialState, action: ActionsTypes): Environ
     }
 };
 
+export const actions = {
+    generateTrees: (amount: number) => ({type: GENERATE_TREES, amount} as const),
+    emptyTrees: () => ({type: EMPTY_TREES} as const),
+    generateClouds : (amount: number) => ({type: GENERATE_CLOUDS, amount} as const),
+    emptyClouds : () => ({type: EMPTY_CLOUDS} as const),
+};
+
 type ActionsTypes =
     ChangePartActionType
-    | GenerateTreesActionType
+    |GenerateTreesActionType
     | EmptyTreesActionType
     | GenerateCloudsActionType
     | EmptyCloudsActionType;
 
-type ChangePartActionType = { type: typeof CHANGE_PART, point: string, id: number };
-export const changePart = (point: string, id: number) => ({type: CHANGE_PART, point, id});
+// type DispatchType = Dispatch<ActionsTypes>
+type ThunkType = ThunkAction<Promise<void>, AppStateType, unknown, ActionsTypes>
 
-type GenerateTreesActionType = { type: typeof GENERATE_TREES, amount: number };
-export const generateTrees = (amount: number) => ({type: GENERATE_TREES, amount});
+export const generateAllThunk = (treesAmount: number, cloudsAmount: number): ThunkType => {
+    return async (dispatch) => {
+        dispatch(actions.generateTrees(treesAmount) as GenerateTreesActionType);
+        dispatch(actions.generateClouds(cloudsAmount) as GenerateCloudsActionType)
+    }
+};
+
+export const emptyAllThunk = (): ThunkType => {
+    return async (dispatch) => {
+        dispatch(actions.emptyTrees() as EmptyTreesActionType);
+        dispatch(actions.emptyClouds() as EmptyCloudsActionType)
+    }
+};
 
 type EmptyTreesActionType = { type: typeof EMPTY_TREES };
-export const emptyTrees = () => ({type: EMPTY_TREES});
-
 type GenerateCloudsActionType = { type: typeof GENERATE_CLOUDS, amount: number };
-export const generateClouds = (amount: number) => ({type: GENERATE_CLOUDS, amount});
-
 type EmptyCloudsActionType = { type: typeof EMPTY_CLOUDS };
-export const emptyClouds = () => ({type: EMPTY_CLOUDS});
+type GenerateTreesActionType = { type: typeof GENERATE_TREES, amount: number };
+type ChangePartActionType = { type: typeof CHANGE_PART, point: string, id: number };
 
 export default environmentReducer;
